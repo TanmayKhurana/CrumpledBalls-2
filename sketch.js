@@ -19,18 +19,18 @@ function setup() {
 	groundSprite = createSprite(1100, 475, 10000, 20)
 	groundSprite.shapeColor = color("red")
 
-	dustbinSprite = createSprite(1035, 331)
+	dustbinSprite = createSprite(1035, 316)
 	dustbinSprite.addImage("run", dustbinl)
-	dustbinSprite.scale = 0.8
+	dustbinSprite.scale = 0.9
 	
 	//Create the Bodies Here.
 
-	ground = Bodies.rectangle(100, 430, 10000, 20, {isStatic:true})
+	ground = Bodies.rectangle(100, 448, 10000, 20, {isStatic:true})
 	World.add(world, ground)
 
 	side1 = new Dustbin(949, 409, 20, 150)
-	side2 = new Dustbin(1121, 409, 20, 150)
-	side3 = new Dustbin(1035, 454, 190, 20)
+	side2 = new Dustbin(1121, 370, 20, 200)
+
 
 	ball = new Paper(90, 350, 2)
 
@@ -47,7 +47,6 @@ function draw() {
 
   side1.display()
   side2.display()
-  side3.display()
 
   ball.display()
   
@@ -58,8 +57,8 @@ function draw() {
 function keyPressed(){
 	if (keyCode === UP_ARROW){
 		Matter.Body.applyForce(ball.body, ball.body.position,{
-			x:0.845,
-			y:-0.845
+			x:0.86,
+			y:-0.86
 		}
 		)
 	}
